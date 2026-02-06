@@ -1,0 +1,312 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #2563EB;
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: #EF4444;
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: #2563EB;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Trust Keeper Design System */
+  --tk-blue: #2563EB;
+  --tk-blue-dark: #1E40AF;
+  --tk-green: #10B981;
+  --tk-green-dark: #059669;
+  --tk-red: #EF4444;
+  --tk-orange: #F59E0B;
+  --tk-gray-900: #111827;
+  --tk-gray-800: #1F2937;
+  --tk-gray-700: #374151;
+  --tk-gray-600: #4B5563;
+  --tk-gray-500: #6B7280;
+  --tk-gray-400: #9CA3AF;
+  --tk-gray-300: #D1D5DB;
+  --tk-gray-200: #E5E7EB;
+  --tk-gray-100: #F3F4F6;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+}
+
+/* ==========================================
+   Trust Keeper Landing Page Styles
+   ========================================== */
+
+/* Scroll Progress */
+.tk-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(135deg, var(--tk-blue) 0%, var(--tk-blue-dark) 100%);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* Landing Nav */
+.tk-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Hero */
+.tk-hero {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+}
+
+/* Stat Value */
+.tk-stat-value::after {
+  content: '%';
+  font-size: 1.5rem;
+  margin-left: 0.25rem;
+}
+
+/* Gradient backgrounds */
+.tk-gradient-primary {
+  background: linear-gradient(135deg, var(--tk-blue) 0%, var(--tk-blue-dark) 100%);
+}
+
+.tk-gradient-success {
+  background: linear-gradient(135deg, var(--tk-green) 0%, var(--tk-green-dark) 100%);
+}
+
+.tk-gradient-danger {
+  background: linear-gradient(135deg, var(--tk-red) 0%, #DC2626 100%);
+}
+
+/* FAQ Accordion */
+.tk-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.tk-faq-answer.open {
+  max-height: 500px;
+}
+
+.tk-faq-chevron {
+  transition: transform 0.3s ease;
+}
+
+.tk-faq-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Card hover */
+.tk-card-hover {
+  transition: all 0.3s ease;
+}
+
+.tk-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+/* Button hover */
+.tk-btn-hover {
+  transition: all 0.3s ease;
+}
+
+.tk-btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+/* Comparison badges */
+.tk-badge-bad {
+  background: #FEE2E2;
+  color: var(--tk-red);
+}
+
+.tk-badge-good {
+  background: #D1FAE5;
+  color: var(--tk-green);
+}
+
+/* Flow result colors */
+.tk-text-loss { color: var(--tk-red); }
+.tk-text-success { color: var(--tk-green); }
+
+/* Notice box */
+.tk-notice {
+  background: #FEF3C7;
+  border-left: 4px solid var(--tk-orange);
+}
+
+/* Before/After table */
+.tk-table-before {
+  background: #FEE2E2;
+  color: var(--tk-red);
+}
+
+.tk-table-after {
+  background: #D1FAE5;
+  color: var(--tk-green);
+}
+
+/* Social proof */
+.tk-social-proof {
+  background: linear-gradient(135deg, var(--tk-blue) 0%, var(--tk-blue-dark) 100%);
+}
+
+/* ==========================================
+   Internal Pages - Consistent Design
+   ========================================== */
+.tk-page-container {
+  min-height: 100vh;
+  background: var(--tk-gray-100);
+}
+
+.tk-page-header {
+  background: white;
+  border-bottom: 1px solid var(--tk-gray-200);
+  padding: 1rem 0;
+}
+
+/* Mobile Menu */
+.tk-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: white;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  z-index: 2000;
+  transition: right 0.3s ease;
+  padding: 2rem;
+}
+
+.tk-mobile-menu.active {
+  right: 0;
+}
+
+/* Pricing popular */
+.tk-pricing-popular {
+  border: 3px solid var(--tk-blue);
+  position: relative;
+}
