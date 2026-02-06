@@ -1,11 +1,12 @@
 import { cookies } from "next/headers";
 
 const ADMIN_SESSION_TOKEN = "trust-keeper-admin-session";
-const ADMIN_USERNAME = "fitkle.official";
-const ADMIN_PASSWORD = "Wjsekazlffj12!@";
 
 export function validateCredentials(username: string, password: string): boolean {
-  return username === ADMIN_USERNAME && password === ADMIN_PASSWORD;
+  const adminUsername = process.env.ADMIN_USERNAME;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  if (!adminUsername || !adminPassword) return false;
+  return username === adminUsername && password === adminPassword;
 }
 
 export async function setAdminSession(): Promise<string> {
