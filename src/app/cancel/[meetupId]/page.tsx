@@ -109,6 +109,8 @@ export default function CancelPage() {
   }
 
   const eventDate = new Date(meetup.date);
+  const hoursUntilMeetup = (eventDate.getTime() - Date.now()) / (1000 * 60 * 60);
+  const isTooLate = hoursUntilMeetup < 24;
 
   return (
     <div className="min-h-screen bg-[#F3F4F6]">
@@ -170,10 +172,18 @@ export default function CancelPage() {
               <div className="p-4 rounded-md bg-gray-50 text-center">
                 <p className="text-muted-foreground">{t("cancel.alreadyCancelled")}</p>
               </div>
+            ) : isTooLate ? (
+              <div className="p-4 rounded-md bg-yellow-50 text-center space-y-2">
+                <p className="font-medium text-yellow-800">{t("cancel.tooLate")}</p>
+                <p className="text-sm text-yellow-700">{t("cancel.deadline")}</p>
+              </div>
             ) : (
               <div className="space-y-3">
                 <p className="text-sm text-muted-foreground">
                   {t("cancel.confirmText")}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {t("cancel.deadline")}
                 </p>
                 <Button
                   variant="destructive"

@@ -27,6 +27,18 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "취소할 수 없는 상태입니다." }, { status: 400 });
   }
 
+  // 모임 24시간 전부터는 취소 차단
+  const meetupDate = new Date(participant.meetups.date);
+  const now = new Date();
+  const hoursUntilMeetup = (meetupDate.getTime() - now.getTime()) / (1000 * 60 * 60);
+
+  if (hoursUntilMeetup < 24) {
+    return NextResponse.json(
+      { error: "모임 24시간 전부터는 취소가 불가능합니다." },
+      { status: 400 }
+    );
+  }
+
   const wasWaitlisted = participant.is_waitlisted;
 
   // Cancel the participant

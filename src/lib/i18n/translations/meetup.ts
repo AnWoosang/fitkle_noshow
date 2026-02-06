@@ -41,6 +41,8 @@ export const meetupKo: Record<string, string> = {
   "cancel.cancelling": "처리 중...",
   "cancel.cancelBtn": "참가 취소하기",
   "cancel.promoted": "대기자 {name}님이 승격되었습니다.",
+  "cancel.tooLate": "모임 24시간 전부터는 취소가 불가능합니다.",
+  "cancel.deadline": "모임 24시간 전까지 취소 가능",
 
   // Check-in page
   "checkin.title": "출석 체크인",
@@ -113,6 +115,8 @@ export const meetupEn: Record<string, string> = {
   "cancel.cancelling": "Processing...",
   "cancel.cancelBtn": "Cancel Registration",
   "cancel.promoted": "Waitlisted participant {name} has been promoted.",
+  "cancel.tooLate": "Cancellation is not possible within 24 hours of the meetup.",
+  "cancel.deadline": "Cancellation available up to 24 hours before the meetup",
 
   // Check-in page
   "checkin.title": "Check-in",

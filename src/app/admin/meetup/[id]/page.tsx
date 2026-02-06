@@ -337,6 +337,9 @@ ${dateStr} ${timeStr}
 ${meetup.location}
 ${meetup.fee_display ? `참가비: ${meetup.fee_display}` : ""}
 
+참석 확정은 모임 24시간 전까지 완료해주세요.
+미확정 시 노쇼로 간주됩니다.
+
 참석 확정: {확정링크}
 참석이 어려우시면: {취소링크}`;
 
@@ -347,6 +350,8 @@ ${dateStr} ${timeStr}
 ${meetup.location}
 
 아직 참석 확정을 하지 않으셨습니다.
+모임 24시간 전까지 확정하지 않으면 노쇼로 간주됩니다.
+
 참석 확정: {확정링크}
 참석이 어려우시면: {취소링크}`;
 
@@ -355,6 +360,9 @@ ${meetup.location}
 
 ${dateStr} ${timeStr}
 ${meetup.location}
+
+참석 확정은 모임 24시간 전까지 완료해주세요.
+미확정 시 노쇼로 간주됩니다.
 
 미리 참석을 확정해주세요: {확정링크}
 참석이 어려우시면: {취소링크}`;
@@ -365,6 +373,9 @@ ${meetup.location}
 ${dateStr} ${timeStr}
 ${meetup.location}
 
+참석 확정은 모임 24시간 전까지 완료해주세요.
+미확정 시 노쇼로 간주됩니다.
+
 미리 참석을 확정해주세요: {확정링크}
 참석이 어려우시면: {취소링크}`;
 
@@ -373,6 +384,9 @@ ${meetup.location}
 
 ${dateStr} ${timeStr}
 ${meetup.location}
+
+아직 확정하지 않으셨다면 지금 바로 확정해주세요.
+미확정 시 노쇼로 간주됩니다.
 
 참석 확정: {확정링크}
 참석이 어려우시면: {취소링크}`;
@@ -408,7 +422,8 @@ ${meetup.location}`;
 ${dateStr} ${timeStr}
 ${meetup.location}
 
-참석이 어려우시면: {취소링크}`;
+참석이 어려우시면: {취소링크}
+(모임 24시간 전까지 취소 가능)`;
 
       case "cancelled_complete":
         return `{이름}님, ${meetup.title} 모임 참가가 취소되었습니다.
